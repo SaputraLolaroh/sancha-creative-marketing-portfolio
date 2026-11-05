@@ -107,3 +107,18 @@ body{background:var(--paper);color:var(--ink)}
 /* Tombol audio di sudut kanan atas video */
 .hero-video-sound{left:auto;right:12px;top:12px;bottom:auto;padding:10px 14px;background:rgba(112,43,75,.94);border:1px solid rgba(255,255,255,.72);box-shadow:0 5px 16px rgba(50,20,35,.2)}
 .hero-video-sound:hover{background:#4e1d35}
+
+
+/* Other projects section — consistent with the pink portfolio theme */
+.projects-section{background:#fce8ef;padding:88px 0 96px}
+.projects-section .section-heading{margin-bottom:36px}
+.projects-section .section-heading>p{color:#785d69}
+.project-link-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.project-link-card{min-height:215px;padding:22px;background:#fff8fa;border:1px solid rgba(112,43,75,.14);box-shadow:0 8px 22px rgba(112,43,75,.045);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.project-link-card:hover{transform:translateY(-5px);border-color:#c45b83;box-shadow:0 15px 30px rgba(112,43,75,.1)}
+.project-kind{color:#a6426b}
+.project-link-card h3{color:#54283c;font-size:22px}
+.project-link-card p{color:#785d69;font-size:11px;line-height:1.7}
+.project-visit{color:#a6426b;font-size:9px;letter-spacing:.9px}
+@media(max-width:900px){.project-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.projects-section{padding:72px 0}.project-link-grid{grid-template-columns:1fr}.project-link-card{min-height:0;padding:21px}}
