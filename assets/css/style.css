@@ -220,3 +220,18 @@ h1 em,h2 em{color:#b84e79}
 .hero-video-bg video{opacity:1}
 .hero-video-bg::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.5);z-index:2;pointer-events:none}
 .hero-video-sound{z-index:4}
+
+
+/* Layer the complete Sancha hero composition above the video and its white wash */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero-video-bg{position:absolute!important;inset:0!important;z-index:0!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;max-width:none!important;border:0!important;border-radius:0!important;background:#fff!important;box-shadow:none!important;overflow:hidden!important;pointer-events:auto}
+.hero-video-bg video{display:block;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;opacity:1!important;background:#fff}
+.hero-video-bg::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.5);z-index:2;pointer-events:none}
+.hero-copy,.hero-art,.hero-scroll{position:relative;z-index:3}
+.hero-copy{padding-top:0}
+.hero-art{z-index:3}
+.hero-video-sound{z-index:5}
+@media(max-width:760px){
+  .hero-video-bg{inset:0!important;width:100%!important;height:100%!important}
+  .hero-copy{padding-top:0!important}
+}
