@@ -235,3 +235,54 @@ h1 em,h2 em{color:#b84e79}
   .hero-video-bg{inset:0!important;width:100%!important;height:100%!important}
   .hero-copy{padding-top:0!important}
 }
+
+
+/* Full-site responsive video backdrop with a 60% white wash */
+html,body{min-height:100%;background:transparent}
+body{position:relative;isolation:isolate;background:transparent}
+.hero-video-bg{
+  position:fixed!important;
+  inset:0!important;
+  z-index:-1!important;
+  width:100vw!important;
+  height:100vh!important;
+  height:100dvh!important;
+  max-width:none!important;
+  aspect-ratio:auto!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  pointer-events:none!important;
+}
+.hero-video-bg video{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  opacity:.6!important;
+  background:#fff!important;
+}
+.hero-video-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:rgba(255,255,255,.6)!important;
+  pointer-events:none;
+}
+.hero-video-sound{position:fixed!important;z-index:30!important;top:calc(100vh - 58px)!important;top:calc(100dvh - 58px)!important;left:auto!important;right:18px!important;bottom:auto!important;pointer-events:auto!important}
+/* Let the moving video remain visible behind all page sections */
+.announcement{background:rgba(52,32,47,.88)}
+.site-header{background:rgba(255,250,248,.82)!important;backdrop-filter:blur(10px)}
+.hero,.about,.skills-section,.contact{background:transparent!important}
+.work-section{background:rgba(248,234,240,.72)!important}
+.projects-section{background:rgba(244,223,231,.72)!important}
+.footer{background:rgba(52,32,47,.9)!important}
+@media(max-width:760px){
+ .hero-video-bg{width:100vw!important;height:100vh!important;height:100dvh!important}
+ .hero-video-bg video{object-position:center center!important}
+ .hero-video-sound{right:12px!important;top:calc(100dvh - 54px)!important}
+ .site-header{backdrop-filter:blur(8px)}
+}
