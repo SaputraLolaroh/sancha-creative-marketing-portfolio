@@ -304,3 +304,72 @@ body{position:relative;isolation:isolate;background:transparent}
     left:auto!important;
   }
 }
+
+
+/* Restrict the video and 60% white overlay to the milk-tea artwork only */
+html,body{background:var(--paper)!important}
+body{isolation:auto!important}
+.hero{isolation:auto!important;overflow:visible!important;background:transparent!important}
+.hero-video-bg{
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  aspect-ratio:auto!important;
+  border:0!important;
+  border-radius:inherit!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  pointer-events:none!important;
+}
+.hero-video-bg video{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  opacity:1!important;
+  background:#fff!important;
+}
+.hero-video-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:rgba(255,255,255,.6)!important;
+  pointer-events:none;
+}
+.hero-art{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  background:transparent!important;
+  z-index:3!important;
+}
+.hero-art:before{z-index:1}
+.hero-art>:not(.hero-video-bg){position:relative;z-index:3}
+.hero-art .sun-disc,.hero-art .art-leaf,.hero-art .cup-shadow,.hero-art .drink-cup{position:absolute}
+.hero-art .art-sticker,.hero-art .art-caption{position:absolute;z-index:4}
+.hero-copy,.hero-scroll{position:relative;z-index:3}
+.announcement{background:var(--deep)!important}
+.site-header{background:rgba(247,244,236,.94)!important}
+.about,.skills-section,.contact{background:var(--paper)!important}
+.work-section{background:#f8eaf0!important}
+.projects-section{background:#f4dfe7!important}
+.footer{background:#34202f!important}
+.hero-video-sound{
+  position:fixed!important;
+  top:calc(31px + 78px + 12px)!important;
+  right:7vw!important;
+  left:auto!important;
+  bottom:auto!important;
+  z-index:30!important;
+}
+@media(max-width:760px){
+  .hero-art{isolation:isolate!important}
+  .hero-video-bg{inset:0!important;width:100%!important;height:100%!important}
+  .hero-video-sound{top:calc(31px + 66px + 10px)!important;right:16px!important}
+}
