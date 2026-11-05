@@ -373,3 +373,72 @@ body{isolation:auto!important}
   .hero-video-bg{inset:0!important;width:100%!important;height:100%!important}
   .hero-video-sound{top:calc(31px + 66px + 10px)!important;right:16px!important}
 }
+
+
+/* Editorial graphic details — fine rules, measurement marks and tea-inspired geometry */
+:root{
+  --detail-ink:#452238;
+  --detail-rose:#c45b83;
+  --detail-peach:#f1a17d;
+  --detail-line:rgba(112,43,75,.22);
+}
+.announcement{position:relative;border-bottom:1px solid rgba(255,240,245,.2)}
+.announcement:after{content:"";position:absolute;left:7vw;right:7vw;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,240,245,.45),transparent)}
+.site-header{border-bottom:1px solid var(--detail-line)!important}
+.site-header:after{content:"";position:absolute;left:7vw;bottom:-2px;width:76px;height:3px;background:var(--detail-rose)}
+.hero{position:relative}
+.hero:after{content:"";position:absolute;left:0;bottom:36px;width:100%;height:1px;background:linear-gradient(90deg,var(--detail-line),transparent 72%);pointer-events:none}
+.eyebrow{position:relative}
+.eyebrow:before{content:"";width:7px;height:7px;border:1px solid var(--detail-rose);transform:rotate(45deg);display:inline-block;flex:0 0 7px}
+.hero-art{outline:1px solid rgba(112,43,75,.16);outline-offset:8px}
+.hero-art:after{content:"";position:absolute;z-index:2;inset:18px;border:1px solid rgba(112,43,75,.16);border-radius:inherit;pointer-events:none}
+.art-caption{left:0;right:0;display:flex;justify-content:space-between;gap:12px;border-top:1px solid rgba(112,43,75,.28);padding-top:10px}
+.art-sticker{border:1px solid rgba(255,255,255,.55)}
+.hero-scroll{letter-spacing:2.5px}
+.hero-scroll:before{content:"";display:inline-block;width:34px;height:1px;background:var(--detail-rose);vertical-align:middle;margin-right:12px}
+.about{position:relative}
+.about:before,.skills-section:before{content:"";position:absolute;top:0;left:7vw;width:1px;height:52px;background:linear-gradient(var(--detail-rose),transparent)}
+.section-kicker{display:flex;align-items:center;gap:12px}
+.section-kicker:after{content:"";display:inline-block;width:42px;height:1px;background:var(--detail-rose);opacity:.75}
+.about-grid{border-top:1px solid var(--detail-line);border-bottom:1px solid var(--detail-line);padding-top:34px;padding-bottom:34px;position:relative}
+.about-grid:after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(transparent,var(--detail-line) 18%,var(--detail-line) 82%,transparent);pointer-events:none}
+.about-tags span{border-radius:2px!important;position:relative}
+.about-tags span:before{content:"";display:inline-block;width:5px;height:5px;margin-right:7px;background:var(--detail-rose);border-radius:50%;vertical-align:middle}
+.work-section{position:relative;border-top:1px solid var(--detail-line);border-bottom:1px solid var(--detail-line)}
+.work-section:before,.projects-section:before{content:"";position:absolute;top:0;left:7vw;right:7vw;height:1px;background:linear-gradient(90deg,var(--detail-rose),transparent 45%,var(--detail-line))}
+.section-heading{position:relative;padding-bottom:24px;border-bottom:1px solid var(--detail-line);margin-bottom:36px}
+.section-heading:after{content:"";position:absolute;right:0;bottom:-3px;width:44px;height:5px;background:var(--detail-peach)}
+.work-card{position:relative;border-radius:3px!important}
+.work-card:before{content:"";position:absolute;top:5px;left:5px;width:22px;height:22px;border-top:1px solid var(--detail-rose);border-left:1px solid var(--detail-rose);z-index:2;pointer-events:none}
+.work-visual{outline:1px solid rgba(112,43,75,.1);outline-offset:-5px}
+.concept-label{letter-spacing:1.5px}
+.visual-index{letter-spacing:1.4px}
+.portfolio-note{position:relative;border-top:1px solid var(--detail-line);border-bottom:1px solid var(--detail-line)}
+.portfolio-note:after{content:"✳";position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--detail-rose)}
+.projects-section{position:relative;border-top:1px solid var(--detail-line)}
+.project-link-card{position:relative;overflow:hidden}
+.project-link-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--detail-rose),var(--detail-peach),transparent 85%);transform:scaleX(.35);transform-origin:left;transition:transform .3s}
+.project-link-card:hover:before{transform:scaleX(1)}
+.project-kind{display:inline-flex;align-items:center;gap:8px}
+.project-kind:before{content:"";width:16px;height:1px;background:var(--detail-rose)}
+.skills-section{position:relative}
+.skill-group{position:relative;border-radius:3px!important;overflow:hidden}
+.skill-group:after{content:"";position:absolute;right:-24px;bottom:-34px;width:90px;height:90px;border:1px solid rgba(196,91,131,.2);border-radius:50%;box-shadow:0 0 0 9px rgba(196,91,131,.035),0 0 0 18px rgba(196,91,131,.025);pointer-events:none}
+.skill-group>span{display:block;padding-bottom:12px;border-bottom:1px solid var(--detail-line);margin-bottom:18px}
+.contact-card{position:relative;overflow:hidden;border:1px solid rgba(255,240,245,.28)}
+.contact-card:before{content:"";position:absolute;right:-95px;top:-115px;width:310px;height:310px;border:1px solid rgba(255,240,245,.2);border-radius:50%;box-shadow:0 0 0 18px rgba(255,240,245,.035),0 0 0 38px rgba(255,240,245,.025),0 0 0 58px rgba(255,240,245,.018);pointer-events:none}
+.contact-card:after{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(var(--detail-peach),var(--detail-rose),transparent)}
+.footer{position:relative;border-top:3px solid var(--detail-rose)}
+.footer:before{content:"";position:absolute;left:7vw;right:7vw;top:8px;height:1px;background:rgba(255,240,245,.2)}
+@media(max-width:760px){
+ .hero:after{bottom:20px}
+ .hero-art{outline-offset:4px}
+ .hero-art:after{inset:10px}
+ .art-caption{font-size:7px;flex-wrap:wrap}
+ .about-grid:after{display:none}
+ .about-grid{gap:24px}
+ .section-heading{padding-bottom:18px;margin-bottom:26px}
+ .work-card:before{top:4px;left:4px}
+ .contact-card:before{right:-190px;top:-80px}
+ .portfolio-note{padding-right:42px}
+}
