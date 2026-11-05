@@ -442,3 +442,40 @@ body{isolation:auto!important}
  .contact-card:before{right:-190px;top:-80px}
  .portfolio-note{padding-right:42px}
 }
+
+
+/* MODERN INLINE ICON SYSTEM — consistent iconography for navigation, actions and links */
+.ui-icon,.project-platform-icon,.visit-icon,.link-arrow{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.ui-icon svg,.project-platform-icon svg,.visit-icon svg,.link-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav-links>a{display:inline-flex;align-items:center;gap:8px}
+.nav-links>a:not(.nav-contact) .ui-icon{color:var(--green);opacity:.85}
+.nav-links>a:not(.nav-contact) .ui-icon svg{width:14px;height:14px}
+.nav-cv{padding:9px 12px;border:1px solid var(--line);border-radius:3px}
+.nav-contact{gap:9px;box-shadow:0 5px 14px rgba(38,59,45,.12);transition:transform .2s,box-shadow .2s}
+.nav-contact:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(38,59,45,.18)}
+.nav-contact .ui-icon{color:var(--lime)}
+.hero-video-sound{display:inline-flex;align-items:center;gap:7px}
+.hero-video-sound .ui-icon svg{width:13px;height:13px}
+.button .ui-icon svg,.text-link .ui-icon svg{width:15px;height:15px}
+.button-dark .ui-icon{color:var(--lime)}
+.text-link{display:inline-flex;align-items:center;gap:8px}
+.project-link-card{position:relative;padding-top:58px!important}
+.project-platform-icon{position:absolute;top:22px;right:22px;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.72);border:1px solid rgba(69,34,56,.14);color:var(--detail-ink,#452238);box-shadow:0 5px 15px rgba(69,34,56,.08);transition:transform .25s,background .25s,color .25s}
+.project-platform-icon svg{width:19px;height:19px}
+.project-link-card:hover .project-platform-icon{transform:translateY(-3px) rotate(-5deg);background:var(--detail-ink,#452238);color:#fff}
+.project-visit{display:inline-flex;align-items:center;gap:8px}
+.visit-icon{width:22px;height:22px;border:1px solid currentColor;border-radius:50%;transition:transform .2s,background .2s}
+.visit-icon svg{width:12px;height:12px}
+.project-link-card:hover .visit-icon{transform:translate(2px,-2px);background:var(--detail-ink,#452238);color:#fff}
+.contact-card .button .ui-icon{color:inherit}
+.footer>a:last-of-type{display:inline-flex;align-items:center;gap:8px}
+.footer>a:last-of-type .ui-icon{width:25px;height:25px;border:1px solid currentColor;border-radius:50%}
+.footer>a:last-of-type .ui-icon svg{width:13px;height:13px}
+@media(max-width:760px){
+ .nav-links>a{gap:6px}
+ .project-platform-icon{top:16px;right:16px}
+ .project-link-card{padding-top:52px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .project-platform-icon,.visit-icon,.nav-contact{transition:none}
+}
