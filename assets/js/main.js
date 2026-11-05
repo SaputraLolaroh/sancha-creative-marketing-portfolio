@@ -61,24 +61,34 @@ if(workGrid){
 }
 
 
-// Allow the visitor to enable audio after the browser's autoplay gesture restriction.
+// Try to start the hero video with sound. Browsers may block audible autoplay;
+// if blocked, start muted and let the visitor enable sound with the top-right button.
 const heroVideo = document.querySelector('#heroCreativeVideo');
 const heroSoundButton = document.querySelector('.hero-video-sound');
 if (heroVideo && heroSoundButton) {
+  const syncSoundButton = () => {
+    const enabled = !heroVideo.muted;
+    heroSoundButton.setAttribute('aria-pressed', String(enabled));
+    heroSoundButton.textContent = enabled ? '♪ SUARA AKTIF' : '▶ AKTIFKAN SUARA';
+  };
+
+  heroVideo.muted = false;
+  heroVideo.play().then(() => {
+    syncSoundButton();
+  }).catch(async () => {
+    heroVideo.muted = true;
+    syncSoundButton();
+    try { await heroVideo.play(); } catch (_) { /* user can start playback from the video control */ }
+  });
+
   heroSoundButton.addEventListener('click', async () => {
+    heroVideo.muted = !heroVideo.muted;
     try {
-      heroVideo.muted = !heroVideo.muted;
-      if (!heroVideo.paused) {
-        await heroVideo.play();
-      } else {
-        await heroVideo.play();
-      }
-      const soundEnabled = !heroVideo.muted;
-      heroSoundButton.setAttribute('aria-pressed', String(soundEnabled));
-      heroSoundButton.textContent = soundEnabled ? '♪ SUARA AKTIF' : '▶ AKTIFKAN SUARA';
-    } catch (error) {
+      await heroVideo.play();
+      syncSoundButton();
+    } catch (_) {
       heroVideo.muted = true;
-      heroSoundButton.textContent = 'KLIK UNTUK AKTIFKAN SUARA';
+      syncSoundButton();
     }
   });
 }
