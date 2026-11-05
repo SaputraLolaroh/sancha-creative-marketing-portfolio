@@ -102,3 +102,8 @@ body{background:var(--paper);color:var(--ink)}
 .hero-video-sound:hover{background:#702b4b}
 @media(max-width:760px){.hero{padding-top:0}.hero-video-bg{left:0;top:8px;width:min(78vw,430px);aspect-ratio:16/9}.hero-copy{padding-top:calc(min(78vw,430px)*.5625 + 35px)}.hero-art{z-index:2}}
 @media(max-width:620px){.hero-video-bg{width:100%;top:0}.hero-copy{padding-top:calc(88vw*.5625 + 34px)}}
+
+
+/* Tombol audio di sudut kanan atas video */
+.hero-video-sound{left:auto;right:12px;top:12px;bottom:auto;padding:10px 14px;background:rgba(112,43,75,.94);border:1px solid rgba(255,255,255,.72);box-shadow:0 5px 16px rgba(50,20,35,.2)}
+.hero-video-sound:hover{background:#4e1d35}
