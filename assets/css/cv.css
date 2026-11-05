@@ -133,3 +133,21 @@ h1 em{color:#b84e79}
 .profile-photo:after{content:none!important;display:none!important}
 .profile-photo{clip-path:none!important;border-radius:2px!important;overflow:hidden}
 .profile-photo:before{border-radius:0}
+
+
+/* CV icon system — restrained, legible and print-safe */
+.cv-nav .ui-icon,.contact-strip .ui-icon,.link-list .ui-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.cv-nav .ui-icon svg,.contact-strip .ui-icon svg,.link-list .ui-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cv-nav .print-button{display:inline-flex;align-items:center;gap:9px}
+.cv-nav .print-button .ui-icon{display:inline-flex}
+.cv-nav .print-button .ui-icon svg{width:15px;height:15px;stroke:currentColor;fill:none}
+.contact-strip>span,.contact-strip>a{display:inline-flex;align-items:center;gap:6px}
+.contact-strip .ui-icon{color:#b84e79}
+.link-list a{display:flex;align-items:center;justify-content:flex-start;gap:8px}
+.link-list a .ui-icon{color:#b84e79}
+.link-list a .link-arrow{margin-left:auto;color:#b84e79}
+.link-list a .link-arrow svg{width:12px;height:12px}
+.link-list a:hover .link-arrow{transform:translate(2px,-2px)}
+@media print{
+ .cv-nav .ui-icon,.contact-strip .ui-icon,.link-list .ui-icon{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
