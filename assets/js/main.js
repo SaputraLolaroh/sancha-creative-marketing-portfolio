@@ -40,48 +40,22 @@ if ('IntersectionObserver' in window) {
   revealTargets.forEach((element) => element.classList.add('visible'));
 }
 
-// Original portfolio gallery: independent Personal Concept Projects.
+
 const galleryProjects = [
-  { image: 'buy-1-get-1.svg', category: 'Promotional Design', filter: 'promo', title: 'Buy 1 Get 1 Milk Tea', description: 'Poster promosi dengan headline kuat, penawaran mudah dipahami, dan visual produk yang menonjol.' },
-  { image: 'matcha-series.svg', category: 'Social Media', filter: 'social', title: 'Matcha Series Campaign', description: 'Konten pengenalan Matcha Series dengan nuansa segar untuk feed dan story media sosial.' },
-  { image: 'strawberry-series.svg', category: 'Social Media', filter: 'social', title: 'Strawberry Series', description: 'Eksplorasi visual varian strawberry dengan palet warna cerah dan mood playful.' },
-  { image: 'premium-menu.svg', category: 'Menu Design', filter: 'menu', title: 'The Tea Edit — Premium Menu', description: 'Tata letak menu editorial yang rapi, mudah dipindai, dan menonjolkan kategori produk.' },
-  { image: 'cup-packaging.svg', category: 'Packaging', filter: 'branding', title: 'Made to Go — Cup & Bag', description: 'Konsep kemasan cup dan paper bag dengan identitas visual yang konsisten.' },
-  { image: 'brand-identity.svg', category: 'Branding', filter: 'branding', title: 'Sancha Brand Identity', description: 'Eksplorasi logo, tipografi, dan elemen identitas untuk karakter brand artisan tea.' },
-  { image: 'product-photography.svg', category: 'Product Visual', filter: 'photo', title: 'Sip Slow — Product Visual', description: 'Konsep art direction produk dengan fokus pada warna, tekstur, dan suasana menikmati minuman.' },
-  { image: 'summer-campaign.svg', category: 'Campaign', filter: 'campaign', title: 'Good Tea, Better Day', description: 'Arah kampanye musiman untuk membangun mood positif dan memperkuat daya ingat brand.' }
+ {image:'assets/images/poster_flyer.jpeg',category:'Poster & Flyer',filter:'promo',title:'Promotional Flyer Design',description:'Materi flyer promosi dengan fokus pada hierarki informasi dan daya tarik visual.'},
+ {image:'assets/images/poster_medial%20sosial.jpeg',category:'Social Media Campaign',filter:'social',title:'Social Media Poster',description:'Poster digital untuk kebutuhan komunikasi dan promosi di kanal sosial.'},
+ {image:'assets/images/poster_menu.jpeg',category:'Menu Design',filter:'menu',title:'Menu Design',description:'Desain menu untuk menyajikan pilihan produk secara terstruktur dan mudah dibaca.'},
+ {image:'assets/images/media%20sosial_feed%20instagram.jpeg',category:'Instagram Feed',filter:'social',title:'Instagram Feed System',description:'Eksplorasi tata letak feed dengan konsistensi visual untuk komunikasi brand.'},
+ {image:'assets/images/media%20sosial_carousel.jpeg',category:'Carousel Content',filter:'social',title:'Social Media Carousel',description:'Konten carousel untuk menyampaikan informasi secara bertahap dan menarik.'},
+ {image:'assets/images/media%20sosial_insta%20story.jpeg',category:'Instagram Story',filter:'social',title:'Instagram Story Layout',description:'Format vertikal untuk promosi singkat dan interaksi audiens.'},
+ {image:'assets/images/Galeri%20Desain%20Sancha%20Artisan%20Milk%20Tea.png',category:'Creative Design Collection',filter:'collection',title:'Sancha Design Collection',description:'Kompilasi eksplorasi visual untuk kebutuhan komunikasi dan promosi artisan milk tea.'},
+ {image:'assets/images/Galeri%20Kreatif%20Sancha%20Milk%20Tea.png',category:'Creative Direction',filter:'collection',title:'Sancha Creative Direction',description:'Kumpulan arah visual dan pendekatan kreatif untuk identitas konten F&B.'}
 ];
-const workGrid = document.querySelector('.work-grid');
-if (workGrid) {
-  workGrid.innerHTML = galleryProjects.map((project, index) => `
-    <article class="work-card gallery-card" data-category="${project.filter}">
-      <div class="gallery-art">
-        <img src="assets/gallery/${project.image}" alt="${project.title} — Personal Concept Project" loading="lazy">
-        <span class="gallery-concept-label">Personal Concept Project</span>
-      </div>
-      <div class="work-info">
-        <div><span class="work-type">${project.category.toUpperCase()}</span><h3>${project.title}</h3></div>
-        <span class="work-arrow" aria-hidden="true">↗</span>
-      </div>
-      <p class="work-description">${project.description}</p>
-    </article>`).join('');
-  const filterBar = document.createElement('div');
-  filterBar.className = 'gallery-filters';
-  filterBar.setAttribute('aria-label', 'Filter kategori karya');
-  filterBar.innerHTML = [
-    ['all','Semua'],['promo','Poster Promosi'],['social','Media Sosial'],['menu','Menu'],['branding','Branding & Kemasan'],['photo','Product Visual'],['campaign','Campaign']
-  ].map(([value,label],i) => `<button type="button" class="gallery-filter${i===0?' active':''}" data-filter="${value}" aria-pressed="${i===0?'true':'false'}">${label}</button>`).join('');
-  workGrid.parentNode.insertBefore(filterBar, workGrid);
-  filterBar.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-filter]');
-    if (!button) return;
-    filterBar.querySelectorAll('.gallery-filter').forEach(item => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-    workGrid.querySelectorAll('.gallery-card').forEach(card => {
-      card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter;
-    });
-  });
+const workGrid=document.querySelector('.work-grid');
+if(workGrid){
+ workGrid.innerHTML=galleryProjects.map(function(p){return '<article class="work-card gallery-card" data-category="'+p.filter+'"><a class="gallery-art" href="'+p.image+'" target="_blank" rel="noopener noreferrer" aria-label="Lihat gambar penuh: '+p.title+'"><img src="'+p.image+'" alt="'+p.title+'" loading="lazy"><span class="gallery-concept-label">Personal Concept Project</span><span class="gallery-open">VIEW PROJECT ↗</span></a><div class="work-info"><div><span class="work-type">'+p.category.toUpperCase()+'</span><h3>'+p.title+'</h3></div><span class="work-arrow" aria-hidden="true">↗</span></div><p class="work-description">'+p.description+'</p></article>';}).join('');
+ const filterBar=document.createElement('div');filterBar.className='gallery-filters';filterBar.setAttribute('aria-label','Filter kategori karya');
+ filterBar.innerHTML=[['all','Semua'],['promo','Poster & Flyer'],['social','Media Sosial'],['menu','Menu'],['collection','Creative Direction']].map(function(v,i){return '<button type="button" class="gallery-filter'+(i===0?' active':'')+'" data-filter="'+v[0]+'" aria-pressed="'+(i===0?'true':'false')+'">'+v[1]+'</button>';}).join('');
+ workGrid.parentNode.insertBefore(filterBar,workGrid);
+ filterBar.addEventListener('click',function(event){const button=event.target.closest('[data-filter]');if(!button)return;filterBar.querySelectorAll('.gallery-filter').forEach(function(item){const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});workGrid.querySelectorAll('.gallery-card').forEach(function(card){card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});});
 }
