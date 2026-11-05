@@ -479,3 +479,73 @@ body{isolation:auto!important}
 @media(prefers-reduced-motion:reduce){
  .project-platform-icon,.visit-icon,.nav-contact{transition:none}
 }
+
+
+/* BRAND-INSPIRED PROJECT CARDS — each surface follows its destination identity */
+.project-link-card{
+  --brand-bg:#f5e9ee;
+  --brand-bg2:#fff8f7;
+  --brand-ink:#452238;
+  --brand-muted:#735968;
+  --brand-accent:#b84e79;
+  --brand-line:color-mix(in srgb,var(--brand-accent) 25%,transparent);
+  isolation:isolate;
+  background:linear-gradient(145deg,var(--brand-bg) 0%,var(--brand-bg2) 100%)!important;
+  color:var(--brand-ink)!important;
+  border:1px solid var(--brand-line)!important;
+  box-shadow:0 8px 22px color-mix(in srgb,var(--brand-accent) 9%,transparent);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.project-link-card:after{
+  content:"";position:absolute;right:-42px;bottom:-58px;width:150px;height:150px;
+  border:1px solid color-mix(in srgb,var(--brand-accent) 23%,transparent);
+  border-radius:50%;box-shadow:0 0 0 12px color-mix(in srgb,var(--brand-accent) 5%,transparent),
+  0 0 0 26px color-mix(in srgb,var(--brand-accent) 3%,transparent);
+  pointer-events:none;z-index:-1
+}
+.project-link-card:before{
+  height:4px!important;background:linear-gradient(90deg,var(--brand-accent),color-mix(in srgb,var(--brand-accent) 35%,white),transparent 90%)!important;
+  transform:scaleX(.7)!important
+}
+.project-link-card:hover{
+  transform:translateY(-6px)!important;
+  border-color:var(--brand-accent)!important;
+  box-shadow:0 18px 34px color-mix(in srgb,var(--brand-accent) 18%,transparent)!important
+}
+.project-link-card h3{color:var(--brand-ink)!important}
+.project-link-card p{color:var(--brand-muted)!important}
+.project-link-card .project-kind,.project-link-card .project-visit{color:var(--brand-accent)!important}
+.project-link-card .project-kind:before{background:var(--brand-accent)!important}
+.project-link-card .project-platform-icon{
+  color:var(--brand-accent)!important;
+  background:color-mix(in srgb,var(--brand-accent) 10%,white)!important;
+  border-color:color-mix(in srgb,var(--brand-accent) 25%,transparent)!important;
+  box-shadow:0 5px 15px color-mix(in srgb,var(--brand-accent) 12%,transparent)!important
+}
+.project-link-card:hover .project-platform-icon,
+.project-link-card:hover .visit-icon{
+  background:var(--brand-accent)!important;color:#fff!important
+}
+.project-link-card .visit-icon{border-color:color-mix(in srgb,var(--brand-accent) 42%,transparent)!important}
+
+/* YouTube — charcoal and signature red */
+.project-link-card.brand-youtube{--brand-bg:#f8e6e5;--brand-bg2:#fff7f6;--brand-ink:#351c1c;--brand-muted:#765454;--brand-accent:#e62117}
+/* Kawanua Inline Skate School — energetic skating blue */
+.project-link-card.brand-skate{--brand-bg:#e1eff9;--brand-bg2:#f6fbff;--brand-ink:#102f4d;--brand-muted:#526c83;--brand-accent:#1677c8}
+/* Personal portfolio — refined dark violet and electric blue */
+.project-link-card.brand-portfolio{--brand-bg:#e9e5f7;--brand-bg2:#f8f6ff;--brand-ink:#292344;--brand-muted:#625b7b;--brand-accent:#6552c7}
+/* HRIS — professional workforce green */
+.project-link-card.brand-hris{--brand-bg:#e1f1e8;--brand-bg2:#f6fcf8;--brand-ink:#173d2d;--brand-muted:#547365;--brand-accent:#168653}
+/* MyStore — clean commerce blue */
+.project-link-card.brand-mystore{--brand-bg:#e1edf9;--brand-bg2:#f7fbff;--brand-ink:#193653;--brand-muted:#5b7188;--brand-accent:#2878c7}
+/* Python — familiar blue and warm yellow */
+.project-link-card.brand-python{--brand-bg:#e9eff8;--brand-bg2:#fff9e8;--brand-ink:#243a58;--brand-muted:#63728a;--brand-accent:#3974a8}
+.project-link-card.brand-python .project-platform-icon{background:#fff0bd!important;color:#28618f!important}
+/* FreshStore — fresh botanical green */
+.project-link-card.brand-freshstore{--brand-bg:#e7f1df;--brand-bg2:#fbfff4;--brand-ink:#29432b;--brand-muted:#61765c;--brand-accent:#5d913c}
+/* Instagram — warm pink, violet and coral */
+.project-link-card.brand-instagram{--brand-bg:#f5e4ef;--brand-bg2:#fff4eb;--brand-ink:#49233e;--brand-muted:#80566f;--brand-accent:#c13584}
+@media(max-width:760px){
+  .project-link-card:after{width:115px;height:115px;right:-35px;bottom:-48px}
+}
+@media(prefers-reduced-motion:reduce){.project-link-card{transition:none}}
