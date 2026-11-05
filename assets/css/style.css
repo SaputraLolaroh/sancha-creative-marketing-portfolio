@@ -215,5 +215,8 @@ h1 em,h2 em{color:#b84e79}
 @media(max-width:620px){.hero-video-bg{left:0;top:0;width:min(58vw,250px);height:auto;aspect-ratio:9/16}.hero-copy{padding-top:calc(min(58vw,250px)*1.7778 + 30px)}}
 
 
-/* Make the hero video 50% transparent without fading its sound control */
-.hero-video-bg video{opacity:.5}
+/* White translucent overlay over the hero video */
+.hero-video-bg{position:relative}
+.hero-video-bg video{opacity:1}
+.hero-video-bg::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.5);z-index:2;pointer-events:none}
+.hero-video-sound{z-index:4}
