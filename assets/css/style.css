@@ -286,3 +286,21 @@ body{position:relative;isolation:isolate;background:transparent}
  .hero-video-sound{right:12px!important;top:calc(100dvh - 54px)!important}
  .site-header{backdrop-filter:blur(8px)}
 }
+
+
+/* Keep the video sound control in the top navigation area */
+.hero-video-sound{
+  position:fixed!important;
+  top:calc(31px + 78px + 12px)!important;
+  right:7vw!important;
+  left:auto!important;
+  bottom:auto!important;
+  z-index:25!important;
+}
+@media(max-width:760px){
+  .hero-video-sound{
+    top:calc(31px + 66px + 10px)!important;
+    right:16px!important;
+    left:auto!important;
+  }
+}
