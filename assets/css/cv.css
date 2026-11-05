@@ -128,3 +128,8 @@ h1 em{color:#b84e79}
  .resume-sheet:after{display:none}
  .profile-photo{box-shadow:4px 4px 0 #f2dbe3}
 }
+
+/* Remove decorative corner wedge that caused the black triangle artifact */
+.profile-photo:after{content:none!important;display:none!important}
+.profile-photo{clip-path:none!important;border-radius:2px!important;overflow:hidden}
+.profile-photo:before{border-radius:0}
