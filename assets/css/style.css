@@ -213,3 +213,7 @@ h1 em,h2 em{color:#b84e79}
 .button span,.nav-contact span,.nav-cv span,.text-link span{display:none!important}
 @media(max-width:760px){.hero-video-bg{left:0;top:8px;width:min(58vw,250px);height:auto;aspect-ratio:9/16}.hero-copy{padding-top:calc(min(58vw,250px)*1.7778 + 30px)}.hero-art{z-index:2}}
 @media(max-width:620px){.hero-video-bg{left:0;top:0;width:min(58vw,250px);height:auto;aspect-ratio:9/16}.hero-copy{padding-top:calc(min(58vw,250px)*1.7778 + 30px)}}
+
+
+/* Make the hero video 50% transparent without fading its sound control */
+.hero-video-bg video{opacity:.5}
