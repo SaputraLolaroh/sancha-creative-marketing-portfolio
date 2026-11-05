@@ -62,3 +62,31 @@
 
 /* Focused Sancha application portfolio */
 .hero{min-height:620px}.hero h1{font-size:clamp(48px,5.5vw,74px);line-height:1.05}.hero-lead{max-width:470px}.about{padding-top:90px;padding-bottom:95px}.work-section{padding-top:85px;padding-bottom:90px}.work-grid{gap:34px 24px}.gallery-art{height:clamp(230px,27vw,330px);background:#e8e3d5}.gallery-art img{object-fit:contain;background:#e8e3d5}.gallery-concept-label{background:rgba(38,59,45,.92);color:#fff}.media-section{padding-top:80px;padding-bottom:85px}.video-grid-single{grid-template-columns:minmax(0,760px);justify-content:center}.video-card video{max-height:620px;object-fit:contain}.skills-section{padding-top:90px;padding-bottom:100px}.skills-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.skill-group{padding:25px 26px;background:#eeeee4;border:1px solid var(--line);min-height:160px}.skill-group>span{font-size:8px;letter-spacing:1.5px;color:#8a7549;font-weight:700}.skill-group h3{font:500 25px var(--serif);margin:17px 0 8px}.skill-group p{font-size:12px;line-height:1.8;color:#687064;margin:0}.contact{padding-top:75px;padding-bottom:85px}.contact-card{min-height:370px}@media(max-width:620px){.hero h1{font-size:54px}.skills-section{padding-top:70px;padding-bottom:75px}.skills-groups{grid-template-columns:1fr}.skill-group{min-height:0}.video-grid-single{grid-template-columns:1fr}.gallery-art{height:300px}}
+
+/* PINK CREATIVE THEME */
+:root{--paper:#fff5f8;--ink:#432635;--green:#c45b83;--deep:#702b4b;--lime:#f6c3d5;--peach:#f0a4bd;--muted:#8c6c79;--line:rgba(112,43,75,.16)}
+body{background:var(--paper);color:var(--ink)}
+.announcement{background:#702b4b;color:#fff7fa}
+.dot{background:#ffd5e2}.announcement-line{background:#d995af}
+.site-header{background:rgba(255,245,248,.94);border-color:rgba(112,43,75,.15)}
+.brand-mark,.button-dark,.nav-contact{background:#702b4b}
+.brand-light,h1 em,h2 em,.nav-contact span,.button-dark span{color:#e9a9c0}
+.eyebrow,.section-kicker{color:#a6426b}.eyebrow-rule{background:#c45b83}
+.hero-art{background:#f7dce6}
+.sun-disc{background:#efa5bd}
+.about-tags span,.skill-group{background:#fce8ef;border-color:rgba(112,43,75,.14)}
+.skill-group>span{color:#a6426b}
+.skill-group p,.hero-lead,.about-text p{color:#785d69}
+.work-section{background:#fff0f5}
+.work-visual{background-color:#f7dce6}
+.portfolio-note{color:#896c78}
+.contact-card{background:#702b4b}
+.button-light{background:#fff0f5;color:#702b4b}
+.footer{background:#fbe8ef;color:#432635}
+.hero{overflow:hidden;isolation:isolate}
+.hero-copy,.hero-art,.hero-scroll{position:relative;z-index:2}
+.hero-video-bg{position:absolute;z-index:0;left:-7vw;top:0;width:min(43vw,520px);height:360px;overflow:hidden;border-radius:0 0 48% 0;pointer-events:none;opacity:.22;mask-image:linear-gradient(135deg,#000 0%,rgba(0,0,0,.82) 48%,transparent 100%)}
+.hero-video-bg video{width:100%;height:100%;display:block;object-fit:cover;object-position:left top;filter:saturate(.82) sepia(.08)}
+.hero-copy{z-index:3}
+@media(max-width:760px){.hero-video-bg{left:-7vw;top:0;width:78vw;height:260px;opacity:.16}.hero-copy{position:relative}.hero-art{z-index:2}}
+@media(prefers-reduced-motion:reduce){.hero-video-bg video{display:none}}
