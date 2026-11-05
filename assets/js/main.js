@@ -59,3 +59,26 @@ if(workGrid){
  workGrid.parentNode.insertBefore(filterBar,workGrid);
  filterBar.addEventListener('click',function(event){const button=event.target.closest('[data-filter]');if(!button)return;filterBar.querySelectorAll('.gallery-filter').forEach(function(item){const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});workGrid.querySelectorAll('.gallery-card').forEach(function(card){card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});});
 }
+
+
+// Allow the visitor to enable audio after the browser's autoplay gesture restriction.
+const heroVideo = document.querySelector('#heroCreativeVideo');
+const heroSoundButton = document.querySelector('.hero-video-sound');
+if (heroVideo && heroSoundButton) {
+  heroSoundButton.addEventListener('click', async () => {
+    try {
+      heroVideo.muted = !heroVideo.muted;
+      if (!heroVideo.paused) {
+        await heroVideo.play();
+      } else {
+        await heroVideo.play();
+      }
+      const soundEnabled = !heroVideo.muted;
+      heroSoundButton.setAttribute('aria-pressed', String(soundEnabled));
+      heroSoundButton.textContent = soundEnabled ? '♪ SUARA AKTIF' : '▶ AKTIFKAN SUARA';
+    } catch (error) {
+      heroVideo.muted = true;
+      heroSoundButton.textContent = 'KLIK UNTUK AKTIFKAN SUARA';
+    }
+  });
+}
