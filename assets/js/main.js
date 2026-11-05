@@ -61,34 +61,49 @@ if(workGrid){
 }
 
 
-// Try to start the hero video with sound. Browsers may block audible autoplay;
-// if blocked, start muted and let the visitor enable sound with the top-right button.
+// Request audible autoplay immediately; browsers may require a visitor interaction.
 const heroVideo = document.querySelector('#heroCreativeVideo');
 const heroSoundButton = document.querySelector('.hero-video-sound');
 if (heroVideo && heroSoundButton) {
   const syncSoundButton = () => {
     const enabled = !heroVideo.muted;
     heroSoundButton.setAttribute('aria-pressed', String(enabled));
-    heroSoundButton.textContent = enabled ? '♪ SUARA AKTIF' : '▶ AKTIFKAN SUARA';
+    heroSoundButton.textContent = enabled ? '♪ SUARA AKTIF' : 'AKTIFKAN SUARA';
   };
 
-  heroVideo.muted = false;
-  heroVideo.play().then(() => {
-    syncSoundButton();
-  }).catch(async () => {
-    heroVideo.muted = true;
-    syncSoundButton();
-    try { await heroVideo.play(); } catch (_) { /* user can start playback from the video control */ }
-  });
-
-  heroSoundButton.addEventListener('click', async () => {
-    heroVideo.muted = !heroVideo.muted;
+  const startWithSound = async () => {
+    heroVideo.muted = false;
     try {
       await heroVideo.play();
       syncSoundButton();
     } catch (_) {
       heroVideo.muted = true;
       syncSoundButton();
+      try { await heroVideo.play(); } catch (_) {}
     }
+  };
+
+  startWithSound();
+
+  heroSoundButton.addEventListener('click', async () => {
+    heroVideo.muted = !heroVideo.muted;
+    try {
+      await heroVideo.play();
+    } catch (_) {
+      heroVideo.muted = true;
+    }
+    syncSoundButton();
+  });
+
+  const enableSoundAfterInteraction = () => {
+    if (!heroVideo.muted) return;
+    heroVideo.muted = false;
+    heroVideo.play().then(syncSoundButton).catch(() => {
+      heroVideo.muted = true;
+      syncSoundButton();
+    });
+  };
+  ['pointerdown', 'keydown', 'touchstart'].forEach((eventName) => {
+    window.addEventListener(eventName, enableSoundAfterInteraction, { once: true, passive: true });
   });
 }
